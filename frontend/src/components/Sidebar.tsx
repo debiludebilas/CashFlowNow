@@ -1,13 +1,16 @@
-import { Upload, Home, History, LogOut } from 'lucide-react';
+import { Upload, Home, History, LogOut } from "lucide-react";
 
-type Screen = 'home' | 'upload' | 'results' | 'history';
+type Screen = "home" | "upload" | "results" | "history";
 
 interface SidebarProps {
   currentScreen: Screen;
   setCurrentScreen: (screen: Screen) => void;
 }
 
-export default function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
+export default function Sidebar({
+  currentScreen,
+  setCurrentScreen,
+}: SidebarProps) {
   return (
     <div className="w-64 bg-white border-r border-gray-200 flex flex-col">
       <div className="p-6 border-b">
@@ -21,24 +24,24 @@ export default function Sidebar({ currentScreen, setCurrentScreen }: SidebarProp
 
       <div className="flex-1 p-4 space-y-1">
         <button
-          onClick={() => setCurrentScreen('home')}
-          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left ${currentScreen === 'home' ? 'bg-blue-50 text-blue-700' : 'hover:bg-gray-50'}`}
+          onClick={() => setCurrentScreen("home")}
+          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left ${currentScreen === "home" ? "bg-blue-50 text-blue-700" : "hover:bg-gray-50"}`}
         >
           <Home size={20} />
           <span className="font-medium">Dashboard</span>
         </button>
 
         <button
-          onClick={() => setCurrentScreen('upload')}
-          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left ${currentScreen === 'upload' ? 'bg-blue-50 text-blue-700' : 'hover:bg-gray-50'}`}
+          onClick={() => setCurrentScreen("upload")}
+          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left ${currentScreen === "upload" ? "bg-blue-50 text-blue-700" : "hover:bg-gray-50"}`}
         >
           <Upload size={20} />
           <span className="font-medium">Upload Invoices</span>
         </button>
 
         <button
-          onClick={() => setCurrentScreen('history')}
-          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left ${currentScreen === 'history' ? 'bg-blue-50 text-blue-700' : 'hover:bg-gray-50'}`}
+          onClick={() => setCurrentScreen("history")}
+          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left ${currentScreen === "history" ? "bg-blue-50 text-blue-700" : "hover:bg-gray-50"}`}
         >
           <History size={20} />
           <span className="font-medium">History</span>
